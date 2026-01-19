@@ -13,14 +13,8 @@ describe('search', async function () {
     // A helper function to start a web search
     const search = async (term) => {
         // Automate DuckDuckGo search
-        await driver.get('https://duckduckgo.com/');
-        const searchBox = await driver.findElement(
-            By.id('searchbox_input'));
-        await searchBox.sendKeys(term, Key.ENTER);
-
-        // Wait until the result page is loaded
-        await driver.wait(until.elementLocated(By.css('#more-results')));
-
+        await driver.get('https://web.bale.ai/');
+        
         // Return page content
         return await driver.getPageSource();
     };
